@@ -31,11 +31,11 @@ import glob
 
 ALIVE_MSG = [
     "        **Hey {herlocksahip} **\n \n✨ Yüklenen Plugin Sayısı {plugin}\n \n👨🏼‍💻 Python Sürümü {python}\n \n⚡️Telethon Sürüm {telethon}\n \nBotun Sapa Sağlam Çalışıyor iyi günler :)☄️\n\n\n         Herlock Sürüm {herlock} ",
-    "🎆 `Endişelenme! Seni yanlız bırakmam.` **{herlocksahip}**, `HerlockUserbot çalışıyor.` \n Bot Versiyonu: {herlock} ",
-    "`⛈️ Elimden gelenin en iyisini yapmaya hazırım`, **{herlocksahip}** \n Bot Versiyonu: {herlock} ",
-    "✨ `HerlockUserBot sahibinin emirlerine hazır...` \n Bot Versiyonu: {herlock} ",
-    "`Şuan en gelişmiş userbotun düzenlediği mesajı okuyor olmalısın` **{herlocksahip}**. \n Bot Versiyonu: {herlock} ",
-    "`Benimi Aramıştın ❓ Ben Buradayım Merak Etme` \n Bot Versiyonu: {herlock} "
+    "🎆 `Qorxma! Səni yanlız bıraxmaram.` **{herlocksahip}**, `HerlockUserbot aktivdir.` \n Bot Versiyası: {herlock} ",
+    "`⛈️ Əlimdən gələnin ən yaxşısın edməyə hazıram`, **{herlocksahip}** \n Bot Versiyası: {herlock} ",
+    "✨ `HerlockUserBot sahibinin əmirlərinə hazır...` \n Bot Versiyası: {herlock} ",
+    "`İndi ən gəlişmiş userbotun hazırladığı mesajı oxuyar olmalısan` **{herlocksahip}**. \n Bot Versiyası: {herlock} ",
+    "`Məni Axtarırsan ❓ Mən Buradayam Qorxma` \n Bot Versiyası: {herlock} "
 ]
 
 DIZCILIK_STR = [
@@ -54,9 +54,9 @@ DIZCILIK_STR = [
 ]
 
 AFKSTR = [
-    "Şu an acele işim var, daha sonra mesaj atsan olmaz mı? Zaten yine geleceğim.",
-    "Aradığınız kişi şu anda telefona cevap veremiyor. Sinyal sesinden sonra kendi tarifeniz üzerinden mesajınızı bırakabilirsiniz. Mesaj ücreti 49 kuruştur. \n`biiiiiiiiiiiiiiiiiiiiiiiiiiiiip`!",
-    "Birkaç dakika içinde geleceğim. Fakat gelmezsem...\ndaha fazla bekle.",
+    "İndi təcili işim var, daha sonra mesaj atsan olmaz? Dəqiq yenidən gələcəyim.",
+    "Əziz sahibim burda deyil cevap. Sahibim burda olanda sizə cavab verəcək mesajınızı yazabilərsiz. sizlə danisan sahibim userbotu. \n`Herlock`!",
+    "Birneçə dəqiqə içində gələcəyəm. Əgər gəlməzsəm...\ndaha cox gözdə.",
     "Şu an burada değilim, ama muhtemelen başka bir yerdeyim.",
     "Güller kırmızı\nMenekşeler mavi\nBana bir mesaj bırak\nVe sana döneceğim.",
     "Bazen hayattaki en iyi şeyler beklemeye değer…\nHemen dönerim.",
@@ -81,15 +81,15 @@ AFKSTR = [
 ]
 
 KICKME_MSG = [
-    "Güle güle ben gidiyorum 👋🏻",
-    "Sessizce çıkıyorum 🥴",
-    "Haberin olmadan çıkarsam bir gün benim grupta olmadığı farkedeceksin.. O yüzden bu mesajı bırakıyorum🚪",
-    "Hemen burayı terk etmeliyim🤭"
+    "Gülə gülə mən gedirəm 👋🏻",
+    "Səssizcə çıxıram 🥴",
+    "Xəbərin olmadan çıxarsam bir gün mənim qrupta olmadığımı biləcəksən.. buna görə bu mesajı yaziram🚪",
+    "Bu dəqiqə buranı tərk edirəm😔"
 ]
 
 CV_MSG = [
-    "**{DEFAULT_NAME}** `Fazla Bi Bilgi Ayarlamamış Ama Şunu Biliyorum Kendisi Baya Zevkli Birisi Çünkü Herlock Userbot Kullanıyor.` 😁",
-    "`Üzgünüm sana vercek bir bilgim yok.`"
+    "**{DEFAULT_NAME}** `Fazla Bi Məlumat Ayarlamamış Ama Bunu Bilirəm Ki Gözəl Zovqün Var Çünki Herlock Userbot İslədirsən.` 😁",
+    "`Üzgünüm sana verəcək bir məlumatim yox.`"
 ]
 
 
@@ -171,7 +171,7 @@ def extractCommands(file):
             for Komut in Komutlar:
                 # if re.search('\[(\w*)\]', Komut):
                     # Komut = re.sub('(?<=\[.)[A-Za-z0-9_]*\]', '', Komut).replace('[', '')
-                CmdHelp.add_command(Komut, None, 'Bu plugin dışarıdan yüklenmiştir. Herhangi bir açıklama tanımlanmamıştır.')
+                CmdHelp.add_command(Komut, None, 'Bu plugin qırağdan yüklənmişdir. Hərhansı bir məlumat tanımlanmamıştır.')
             CmdHelp.add()
 
 try:
@@ -179,8 +179,8 @@ try:
     idim = bot.get_me().id
     herlockbl = requests.get('https://raw.githubusercontent.com/SakirBey1/Datas/main/blacklist.json').json()
     if idim in herlockbl:
-        bot.send_message("me", f"`❌ Herlock yöneticileri sizi bottan yasakladı! Bot kapatılıyor...`")
-        LOGS.error("Herlock yöneticileri sizi bottan yasakladı! Bot kapatılıyor...")
+        bot.send_message("me", f"`❌ Herlock yöneticileri sizi bottan kənarlasdırdı! Bot bağlanır...`")
+        LOGS.error("Herlock yöneticileri sizi bottan kənarlasdırdı! Bot bağlanır...")
         bot.disconnect()
     # ChromeDriver'ı Ayarlayalım #
     try:
@@ -210,7 +210,7 @@ try:
             else:
                 PLUGIN_MESAJLAR[mesaj] = dmsj
     if not PLUGIN_CHANNEL_ID == None:
-        LOGS.info("🔄 Pluginler Yükleniyor..")
+        LOGS.info("🔄 Pluginler Yüklənir..")
         try:
             KanalId = bot.get_entity(PLUGIN_CHANNEL_ID)
         except:
@@ -224,7 +224,7 @@ try:
                 if not os.path.exists("./userbot/modules/" + plugin.file.name):
                     dosya = bot.download_media(plugin, "./userbot/modules/")
                 else:
-                    LOGS.info("Bu Plugin Onsuzda Yüklüdür " + plugin.file.name)
+                    LOGS.info("Bu Plugin Onsuzda Yüklənib " + plugin.file.name)
                     extractCommands('./userbot/modules/' + plugin.file.name)
                     dosya = plugin.file.name
                     continue 
@@ -235,7 +235,7 @@ try:
 
                     spec.loader.exec_module(mod)
                 except Exception as e:
-                    LOGS.info(f"`[×] Yükleme Başarısız! Plugin Hatalı!!\n\nHata: {e}`")
+                    LOGS.info(f"`[×] Yükləmə Başarısız! Plugin Xətalı!!\n\nXəta: {e}`")
 
                     try:
                         plugin.delete()
@@ -247,7 +247,7 @@ try:
                     continue
                 extractCommands('./userbot/modules/' + plugin.file.name)
     else:
-        bot.send_message("me", f"`Lütfen pluginlerin kalıcı olması için PLUGIN_CHANNEL_ID'i ayarlayın.`")
+        bot.send_message("me", f"`Lütfən pluginlərin qalıcı olması ücun PLUGIN_CHANNEL_ID'i ayarlayın.`")
 
 
    
@@ -283,9 +283,9 @@ LOGS.info("+===========================================================+")
 LOGS.info("|                     ✨Herlcok Userbot✨                       |")
 LOGS.info("+==============+==============+==============+==============+")
 LOGS.info("|                                                            |")
-LOGS.info("Botunuz çalışıyor! Herhangi bir sohbete .alive yazarak Test edin."
-          " Yardıma İhtiyacınız varsa, Destek grubumuza gelin t.me/HerlockSupport1")
-LOGS.info(f"Bot versiyonunuz: Herlock ==> {HERLOCK_VERSION}")
+LOGS.info("Botunuz tam sürətlə isdiyir! Hərhansı bir sohbətdə .alive yazaraq Test edin."
+          " Koməkə Ehtiyacınız varsa, Kömək qrubumuza gəlin t.me/HerlockSupport1")
+LOGS.info(f"Bot versiyanız: Herlock ==> {HERLOCK_VERSION}")
 
 """
 if len(argv) not in (1, 3, 4):
