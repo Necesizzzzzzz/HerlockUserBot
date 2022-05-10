@@ -358,7 +358,7 @@ else:
     # pylint: devre dışı=geçersiz ad
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
-DEVS = 1948748468, 1441286617, #developer ayrıcalıkları olacak
+DEVS = 1948748468, 5030835563, #developer ayrıcalıkları olacak
 
 PREMIUM = get('https://raw.githubusercontent.com/SakirBey1/Datas/main/premium.json').json() # Premium Üyelerin ID 
 
